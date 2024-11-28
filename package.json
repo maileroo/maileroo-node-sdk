@@ -1,6 +1,6 @@
 {
   "name": "maileroo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This repository contains Node.js SDK to help you integrate with Maileroo's email sending API efficiently and effectively.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
