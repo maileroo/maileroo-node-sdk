@@ -1,6 +1,6 @@
 {
   "name": "maileroo-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official Node.js SDK for Maileroo v2 API. Send transactional/marketing emails via Maileroo with a simple and intuitive API.",
   "keywords": [
     "maileroo",
