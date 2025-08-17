@@ -1,21 +1,53 @@
 {
-  "name": "maileroo",
-  "version": "0.0.2",
-  "description": "This repository contains Node.js SDK to help you integrate with Maileroo's email sending API efficiently and effectively.",
+  "name": "maileroo-sdk",
+  "version": "1.0.0",
+  "description": "Official Node.js SDK for Maileroo v2 API. Send transactional/marketing emails via Maileroo with a simple and intuitive API.",
+  "keywords": [
+    "maileroo",
+    "email",
+    "smtp",
+    "transactional",
+    "marketing",
+    "sdk",
+    "api"
+  ],
+  "license": "MIT",
+  "author": "Areeb Majeed",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maileroo/maileroo-node-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maileroo/maileroo-node-sdk/issues"
+  },
+  "homepage": "https://github.com/maileroo/maileroo-node-sdk#readme",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "start": "node index.js",
-    "build": "tsc"
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT License",
-  "dependencies": {
-    "axios": "^1.7.7"
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist || rm -rf dist",
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "devDependencies": {
-    "@types/node": "^22.10.1",
-    "typescript": "^5.6.3"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

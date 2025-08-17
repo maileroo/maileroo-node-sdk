@@ -1,113 +1,46 @@
+# Maileroo Node.js SDK
 
-# Maileroo Node.js Client
+Maileroo is a robust email delivery platform designed for effortless sending of transactional and marketing emails. This Node.js SDK offers a straightforward interface for working with the Maileroo API, supporting basic email formats, templates, bulk sending, and scheduling capabilities.
 
-## Overview
+# Features
 
-Welcome to the official Node.js SDK for Maileroo, a powerful and flexible email sending API. This SDK allows you to easily integrate Maileroo's email sending capabilities into your PHP applications.
+- Send basic HTML or plain text emails with ease
+- Use pre-defined templates with dynamic data
+- Send up to 500 personalized emails in bulk
+- Schedule emails for future delivery
+- Manage scheduled emails (list & delete)
+- Add tags, custom headers, and reference IDs
+- Attach files to your emails
+- Support for multiple recipients, CC, BCC, and Reply-To
+- Enable or disable open and click tracking
+- Built-in input validation and error handling
 
-## Features
+## Install
 
-- Send basic and template-based emails
-- Add attachments and inline attachments
-- Manage contacts (create, update, delete, and list)
-- Generate unique reference IDs for email tracking
-- Chainable methods for setting email data
-
-## Installation
-
-```
-npm install maileroo
-```
-
-## Usage
-
-### Initialization
-
-```typescript
-const { MailerooClient } = require('maileroo');
-
-const apiKey = 'your_api_key';
-const mailerooClient = MailerooClient.getClient(apiKey);
+```bash
+npm i maileroo-sdk
+# or
+yarn add maileroo-sdk
+# or
+pnpm add maileroo-sdk
 ```
 
-### Sending an Email
+## Get Started
 
-#### Basic Email
+TODO.
 
-```typescript
-await mailerooClient
-  .setFrom('John Doe', 'john@example.com')
-  .setTo('Jane Smith', 'jane@example.com')
-  .setSubject('Hello World!')
-  .setHtml('<h1>Welcome</h1>')
-  .setPlain('Welcome')
-  .sendBasicEmail();
-```
+## API
 
-#### Template Email
+TODO.
 
-```typescript
-await mailerooClient
-  .setFrom('John Doe', 'john@example.com')
-  .setTo('Jane Smith', 'jane@example.com')
-  .setTemplateId('template_id')
-  .setTemplateData({ name: 'Jane' })
-  .sendTemplateEmail();
-```
+## Documentation
 
-### Managing Attachments
-
-```typescript
-mailerooClient.addAttachment('./path/to/file.pdf', 'file.pdf', 'application/pdf');
-mailerooClient.addInlineAttachment('./path/to/image.png', 'image.png', 'image/png');
-```
-
-### Contact Management
-
-#### Create Contact
-
-```typescript
-await mailerooClient.createContact('list_id', { email: 'jane@example.com', name: 'Jane Smith' });
-```
-
-#### Update Contact
-
-```typescript
-await mailerooClient.updateContact('list_id', 'jane@example.com', { name: 'Jane Doe' });
-```
-
-#### Delete Contact
-
-```typescript
-await mailerooClient.deleteContact('list_id', 'jane@example.com');
-```
-
-#### Get Contact
-
-```typescript
-const contact = await mailerooClient.getContact('list_id', 'jane@example.com');
-console.log(contact);
-```
-
-#### List Contacts
-
-```typescript
-const contacts = await mailerooClient.listContacts('list_id', 'query', 1);
-console.log(contacts);
-```
-
-## Error Handling
-
-The library throws errors if an API request fails. Use try-catch blocks to handle these errors gracefully:
-
-```typescript
-try {
-  await mailerooClient.sendBasicEmail();
-} catch (error) {
-  console.error(error.message);
-}
-```
+For detailed API documentation, including all available endpoints, parameters, and response formats, please refer to the [Maileroo API Documentation](https://maileroo.com/docs).
 
 ## License
 
-This library is distributed under the MIT License. Feel free to use and modify it.
+This SDK is released under the MIT License.
+
+## Support
+
+Please visit our [support page](https://maileroo.com/contact-form) for any issues or questions regarding Maileroo. If you find any bugs or have feature requests, feel free to open an issue on our GitHub repository.
